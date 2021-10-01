@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Control_Transporte.Models.EmpleadoModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Lista de Empleados</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create" , null, new { @class = "btn btn-primary" })
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.iidPiloto)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_apellido)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.numero)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.viaticos_asignados)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.costos_adicionales_asignados)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.nombre_tipo)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.iidPiloto)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_apellido)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.numero)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.viaticos_asignados)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.costos_adicionales_asignados)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.nombre_tipo)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new {  id=item.iidPiloto  }, new { @class="btn btn-warning"}) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.iidPiloto }, new { @class="btn btn-danger"})
+        </td>
+    </tr>
+}
+
+</table>
